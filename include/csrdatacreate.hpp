@@ -1,7 +1,7 @@
 #ifndef CSRDATACREATE
 #define CSRDATACREATE
 #include <vector>
-#include <metis.h>
+
 #include <fstream>
 #include <string>
 #include <sstream>
