@@ -11,14 +11,14 @@ The following explains how to get a 2x performance increase (from the local-comp
 
 
 For additional information on the algorithm, I recommend reading the following papers:
-* Fast Triangle Counting on the GPU - contains detailed information on the paper.
-* GPU Merge Path: A GPU Merging Algorithm - The GPU version of Merge Path. Includes a detailed discussion of the multi-level  partitioning required for performance on the GPU.
-* Merge Path-Parallel Merging Made Simple - introduces the Merge Path concept which is a key component of the GPU triangle counting algorithm.
+* "Fast Triangle Counting on the GPU" - contains detailed information on the paper.
+* "GPU Merge Path: A GPU Merging Algorithm" - The GPU version of Merge Path. Includes a detailed discussion of the multi-level  partitioning required for performance on the GPU.
+* "Merge Path-Parallel Merging Made Simple" - introduces the Merge Path concept which is a key component of the GPU triangle counting algorithm.
 
 If you are interested on additional optimizations for triangle counting for the CPU see:
 
-* Load Balanced Clustering Coefficients - explains how to design load-balanced algorithms for triangle counting that gets good performance for power law graphs and for large thread counts.
-* Faster Clustering Coefficient Using Vertex Covers - this algorithm reduces the number of interesection required for counting triangles.
+* "Load Balanced Clustering Coefficients" - explains how to design load-balanced algorithms for triangle counting that gets good performance for power law graphs and for large thread counts.
+* "Faster Clustering Coefficient Using Vertex Covers" - this algorithm reduces the number of interesection required for counting triangles.
 
 
 To build:
