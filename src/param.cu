@@ -28,19 +28,19 @@ Param paramProcess(int argc, char *argv[])
   if(argc < (PAR_FILENAME + 1))
   {
     std::cerr<<"Filename not provided.\n";
-    std::cerr<<"Help --     \n\
-      PAR_FILENAME        1 (Required)\n\
-      PAR_RUN             2 (0 : CPU - Default)\n\
-      PAR_CPU_PARTITION   3 (' ')\n\
-      \n\
-      or..                  \n\
-      \n\
+/*     std::cerr<<"Help --     \n\
       PAR_FILENAME        1 (Required)\n\
       PAR_RUN             2 (1 : GPU)\n\
       PAR_BLOCKS          3 (Required)\n\
       PAR_BLOCKSIZE       4 (' ' | 32,64,96,128,192,256,512,1024)\n\
       PAR_THPERINTER      5 (' ' | 1,2,4,8,16,32)\n\
       PAR_PARTITION       6 (' ' | < PAR_BLOCKS)\n";
+*/    std::cerr<<"Help --     \n\
+      PAR_FILENAME        1 (Required)\n\
+      PAR_BLOCKS          2 (Required)\n\
+      PAR_BLOCKSIZE       3 (' ' | 32,64,96,128,192,256,512,1024)\n\
+      PAR_THPERINTER      4 (' ' | 1,2,4,8,16,32)\n\
+      PAR_PARTITION       5 (' ' | < PAR_BLOCKS)\n";
     param.valid = false;
   }
   else
@@ -50,20 +50,20 @@ Param paramProcess(int argc, char *argv[])
     param.fileName = paramRead(paramVec, argc, argv);
     param.valid = true;
   }
-
-  if(argc > PAR_RUN)
-  {
-    int64_t run = paramVec.at(PAR_RUN);
-    if((run > 1) || (run < 0))
-    {
-      std::cerr<<"Invalid argument for run type. (CPU = 0 | GPU = 1). Forcing to CPU.\n";
-    }
-    param.gpuRun = (run == 1)? true : false;
-  }
-  else
-  {
-    param.gpuRun = false;
-  }
+  param.gpuRun=true;
+//  if(argc > PAR_RUN)
+//  {
+//    int64_t run = paramVec.at(PAR_RUN);
+//    if((run > 1) || (run < 0))
+//    {
+//      std::cerr<<"Invalid argument for run type. (CPU = 0 | GPU = 1). Forcing to CPU.\n";
+//    }
+//    param.gpuRun = (run == 1)? true : false;
+//  }
+//  else
+//  {
+//    param.gpuRun = false;
+//  }
 
   if(param.gpuRun == true)
   {
