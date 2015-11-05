@@ -50,9 +50,9 @@ $(GPUTRIANGLECOUNT): $(GPUTRIANGLECOUNTDEPS)
 #$(CPUTRIANGLECOUNT): $(CPUTRIANGLECOUNTDEPS)
 #	$(COMPILE) -c src/clusteringCount.cpp -o $(CPUTRIANGLECOUNT)
 
+#	$(COMPILE) $(EXECDEPS) -lnvToolsExt -Xcompiler -fopenmp -o $(EXEC)
 $(EXEC): $(EXECDEPS)
 	$(COMPILE) $(EXECDEPS) -lnvToolsExt -Xcompiler -fopenmp -o $(EXEC)
-	g++ -std=c++11 src/csrdatacreate.cpp -fopenmp 
 
 clean:
 	rm -f $(EXEC)

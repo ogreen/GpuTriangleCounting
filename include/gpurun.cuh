@@ -2,7 +2,7 @@
 #define GPURUN
 #include "graphRead.hpp"
 #include "param.cuh"
-#include "graphOperations.hpp"
+//#include "graphOperations.hpp"
 #include "clusteringCount.cuh"
 #include <nvToolsExt.h>
 #include <omp.h>
